@@ -12,23 +12,32 @@ class KsiazkaAdresowa
 {
 
     UzytkownikMenedzer uzytkownikMenedzer;
-    AdresatMenedzer adresatMenedzer;
-    string nazwaPlikuZUzytkownikami;
-    int idZalogowanegoUzytkownika;
+    AdresatMenedzer *adresatMenedzer;
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
+    //int idZalogowanegoUzytkownika;
+    char wczytajZnak();
 
 public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami): uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami): uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
     {
-        uzytkownikMenedzer.wczytajUzytkownikowZPliku();
+        adresatMenedzer = NULL;
+    };
+    ~KsiazkaAdresowa()
+    {
+        delete adresatMenedzer;
+        adresatMenedzer = NULL;
     };
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogujUzytkownika();
     void dodajAdresata();
     void wypiszAdresatow();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void ustawIdOstatniegoAdresata();
+    char wyswietlMenuGlowne();
+    char wyswietlMenuUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika();
 
 //    int idOstatniegoAdresata;
 //    int idUsunietegoAdresata;
