@@ -65,10 +65,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     return;
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-   uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
 
 string UzytkownikMenedzer::wczytajLinie()
 {
@@ -85,20 +81,21 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     cout << "Podaj login: ";
     login = wczytajLinie();
 
-    for (int i = 0; i < uzytkownicy.size(); i++)
+    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
+    while (itr != uzytkownicy.end())
     {
-        if (uzytkownicy[i].pobierzLogin() == login)
+        if (itr -> pobierzLogin() == login)
         {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 haslo = wczytajLinie();
 
-                if (uzytkownicy[i].pobierzHaslo() == haslo)
+                if (itr -> pobierzHaslo() == haslo)
                 {
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                     return idZalogowanegoUzytkownika;
                 }
             }
@@ -107,6 +104,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             idZalogowanegoUzytkownika = 0;
             return 0;
         }
+        itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
@@ -132,10 +130,20 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int UzytkownikMenedzer::wylogujUzytkownika()
+void UzytkownikMenedzer::wylogujUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-    adresatMenedzer.wyczyscWektorAdresaci();
+    //adresatMenedzer.wyczyscWektorAdresaci();
+    return;
+}
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
     return idZalogowanegoUzytkownika;
 }
 
+bool UzytkownikMenedzer::czyUdaloSieZalogowac()
+{
+    if(idZalogowanegoUzytkownika == 0) return false;
+    return true;
+}
