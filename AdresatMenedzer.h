@@ -14,12 +14,14 @@ class AdresatMenedzer
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     int idOstatniegoAdresata;
     PlikZAdresatami plikZAdresatami;
+    int idUsunietegoAdresata;
 
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     string wczytajLinie();
-//    int podajIdWybranegoAdresata();
-//    int wczytajLiczbeCalkowita();
+    int podajIdWybranegoAdresata();
+    int wczytajLiczbeCalkowita();
+    char wczytajZnak();
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika):plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
@@ -29,9 +31,10 @@ public:
     void dodajAdresata();
     void wypiszAdresatow();
     void wyczyscWektorAdresaci();
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void ustawIdOstatniegoAdresata();
-    //int usunAdresata();
+    void usunAdresata();
+    void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
 
 };
 

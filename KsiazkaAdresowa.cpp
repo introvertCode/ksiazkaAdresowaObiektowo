@@ -81,7 +81,7 @@ char KsiazkaAdresowa::wyswietlMenuUzytkownika()
 //    cout << "2. Wyszukaj po imieniu" << endl;
 //    cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-//    cout << "5. Usun adresata" << endl;
+    cout << "5. Usun adresata" << endl;
 //    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
@@ -112,4 +112,10 @@ char KsiazkaAdresowa::wczytajZnak()
         cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
     }
     return znak;
+}
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer->usunAdresata();
+    adresatMenedzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
 }
