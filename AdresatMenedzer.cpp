@@ -76,3 +76,6 @@ void AdresatMenedzer::ustawIdOstatniegoAdresata()
 {
     idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
 }
+
+
+
