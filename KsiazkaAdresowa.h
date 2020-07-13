@@ -38,6 +38,7 @@ public:
     char wyswietlMenuGlowne();
     char wyswietlMenuUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
+    void usunAdresata();
 
 //    int idOstatniegoAdresata;
 //    int idUsunietegoAdresata;
