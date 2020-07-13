@@ -18,6 +18,8 @@ class AdresatMenedzer
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     string wczytajLinie();
+//    int podajIdWybranegoAdresata();
+//    int wczytajLiczbeCalkowita();
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika):plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
@@ -29,6 +31,7 @@ public:
     void wyczyscWektorAdresaci();
     //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void ustawIdOstatniegoAdresata();
+    //int usunAdresata();
 
 };
 
