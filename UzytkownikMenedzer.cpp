@@ -133,7 +133,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 void UzytkownikMenedzer::wylogujUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-    //adresatMenedzer.wyczyscWektorAdresaci();
     return;
 }
 

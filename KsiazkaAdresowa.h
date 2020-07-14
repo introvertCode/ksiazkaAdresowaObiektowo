@@ -14,7 +14,6 @@ class KsiazkaAdresowa
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer *adresatMenedzer;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
-    //int idZalogowanegoUzytkownika;
     char wczytajZnak();
 
 public:
@@ -40,6 +39,8 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void usunAdresata();
     void edytujDaneAdresata();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

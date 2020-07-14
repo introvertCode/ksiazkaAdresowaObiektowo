@@ -25,24 +25,6 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     plikTekstowy.close();
 }
 
-//bool PlikZUzytkownikami::czyPlikJestPusty()
-//{
-//    fstream plikTekstowy;
-//    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::in);
-//    plikTekstowy.seekg(0, ios::end);
-//    cout << plikTekstowy.tellg() << endl;
-//    if (plikTekstowy.tellg() == 0)
-//    {
-//        plikTekstowy.close();
-//        return true;
-//    }
-//    else
-//    {
-//        plikTekstowy.close();
-//        return false;
-//    }
-//}
-
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
@@ -53,11 +35,6 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
 
     return liniaZDanymiUzytkownika;
 }
-
-//string PlikZUzytkownikami::pobierzNazwePlikuZUzytkownikami()
-//{
-//    return nazwaPlikuZUzytkownikami;
-//};
 
 vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
 {
