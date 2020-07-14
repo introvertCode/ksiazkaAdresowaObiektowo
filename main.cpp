@@ -42,12 +42,12 @@ int main()
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
                 break;
-//            case '2':
-//                wyszukajAdresatowPoImieniu(adresaci);
-//                break;
-//            case '3':
-//                wyszukajAdresatowPoNazwisku(adresaci);
-//                break;
+            case '2':
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                break;
+            case '3':
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
             case '4':
                 ksiazkaAdresowa.wypiszAdresatow();
                 break;
@@ -68,12 +68,5 @@ int main()
     }
 
 
-    return 0;
-}
-
-int amain()
-{
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
-    ksiazkaAdresowa.logowanieUzytkownika();
     return 0;
 }

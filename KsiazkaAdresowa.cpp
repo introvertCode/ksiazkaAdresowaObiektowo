@@ -43,7 +43,6 @@ void KsiazkaAdresowa::wypiszAdresatow()
 
 void KsiazkaAdresowa::ustawIdOstatniegoAdresata()
 {
-    //adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     adresatMenedzer -> ustawIdOstatniegoAdresata();
 }
 
@@ -78,8 +77,8 @@ char KsiazkaAdresowa::wyswietlMenuUzytkownika()
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
-//    cout << "2. Wyszukaj po imieniu" << endl;
-//    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
     cout << "5. Usun adresata" << endl;
     cout << "6. Edytuj adresata" << endl;
@@ -123,4 +122,14 @@ void KsiazkaAdresowa::usunAdresata()
 void KsiazkaAdresowa::edytujDaneAdresata()
 {
     adresatMenedzer->edytujAdresata();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+     adresatMenedzer->wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatMenedzer->wyszukajAdresatowPoNazwisku();
 }
