@@ -39,10 +39,7 @@ public:
     char wyswietlMenuUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
     void usunAdresata();
-
-//    int idOstatniegoAdresata;
-//    int idUsunietegoAdresata;
-
+    void edytujDaneAdresata();
 };
 
 #endif

@@ -32,8 +32,7 @@ public:
     int pobierzIdOstatniegoAdresata();
     void usunWybranaLinieWPliku(int idAdresata);
     int pobierzZPlikuIdOstatniegoAdresata();
-
-
+    void edytujWybranaLinieWPliku(Adresat adresat);
 };
 
 
