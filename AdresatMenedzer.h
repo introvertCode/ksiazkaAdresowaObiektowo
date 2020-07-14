@@ -22,6 +22,8 @@ class AdresatMenedzer
     int podajIdWybranegoAdresata();
     int wczytajLiczbeCalkowita();
     char wczytajZnak();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika):plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
@@ -35,6 +37,7 @@ public:
     void ustawIdOstatniegoAdresata();
     void usunAdresata();
     void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
+    void edytujAdresata();
 
 };
 

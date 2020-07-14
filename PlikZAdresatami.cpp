@@ -233,3 +233,44 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     }
     return idOstatniegoAdresata;
 }
+
+void PlikZAdresatami::edytujWybranaLinieWPliku(Adresat adresat)
+{
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    string wczytanaLinia = "";
+    int numerWczytanejLinii = 1;
+    string nazwaTymczasowegoPlikuZAdresatami = "tymczasowy.txt";
+    string liniaZDanymiAdresataOddzielonePionowymiKreskami = "";
+
+   liniaZDanymiAdresataOddzielonePionowymiKreskami = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+
+    odczytywanyPlikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good() == true)
+    {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
+            if(adresat.pobierzId() == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia))
+            {
+                if (numerWczytanejLinii == 1)
+                    tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+                else if (numerWczytanejLinii > 1)
+                    tymczasowyPlikTekstowy << endl << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+            }
+            else
+            {
+                if (numerWczytanejLinii == 1)
+                    tymczasowyPlikTekstowy << wczytanaLinia;
+                else if (numerWczytanejLinii > 1)
+                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            }
+            numerWczytanejLinii++;
+        }
+        odczytywanyPlikTekstowy.close();
+        tymczasowyPlikTekstowy.close();
+
+        usunPlik(pobierzNazwePliku());
+        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, pobierzNazwePliku());
+    }
+}
