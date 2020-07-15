@@ -116,7 +116,6 @@ char KsiazkaAdresowa::wczytajZnak()
 void KsiazkaAdresowa::usunAdresata()
 {
     adresatMenedzer->usunAdresata();
-    adresatMenedzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
 }
 
 void KsiazkaAdresowa::edytujDaneAdresata()

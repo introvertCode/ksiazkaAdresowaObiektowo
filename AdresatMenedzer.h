@@ -38,7 +38,7 @@ public:
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void ustawIdOstatniegoAdresata();
     void usunAdresata();
-    void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata();
+    void podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
     void edytujAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
